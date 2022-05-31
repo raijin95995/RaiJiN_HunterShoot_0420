@@ -14,6 +14,7 @@ public class LearnData : MonoBehaviour
     //儲存資料方式
     //欄位 feild
     //資料類型 類型名稱 結束符號;   int 整數 float 浮點數 string 字串 bool 布林值 
+
     int PlayerHp;        //血量
     float PlayerExp;    //經驗
     string PlayerName;  //名字

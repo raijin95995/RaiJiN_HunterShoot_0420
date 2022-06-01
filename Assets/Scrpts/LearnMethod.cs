@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LearnMethod : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //¤èªk»yªk
+   
 
-    // Update is called once per frame
-    void Update()
+    void Test()
     {
-        
+        int ichi = 1;
+        int ni = 2;
+        print(ichi + ni);
     }
 }

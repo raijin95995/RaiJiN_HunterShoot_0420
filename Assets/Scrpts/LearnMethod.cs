@@ -13,6 +13,14 @@ public class LearnMethod : MonoBehaviour
         if (ni > ichi)
         {
             Test();
+            print("羆基=" + Keisan());
+            Shoot("<color=red></color>", mana: 100);   // ﹚把计   跑计:把计
+            Shoot("<color=lightblue></color>", 30);    //狦璶俱﹃ゅ︹  璶耞  璶糶ㄇ
+            Shoot("<color=yellow>筽筿</color>", 10);
+            //更
+            Attack(10);
+            Attack(50, "KM");
+
         }
         else
         {
@@ -20,9 +28,13 @@ public class LearnMethod : MonoBehaviour
         }
     }
 
+    #region 篜舼粂猭
+    //叫敖ず甧
+    #endregion
+
     private void Test()
     {
-        //int ichi = 3; //代刚methodず穝盿跑计
+        //int ichi = 3;                     //代刚methodず穝盿跑计
         print(ichi + ni);
     }
     private void ColorText()
@@ -30,4 +42,42 @@ public class LearnMethod : MonoBehaviour
         print("<color=yellow>и琌独︹</color>");
         print("<color=#1f1e33>簈</color>");
     }
+    public int countPrice = 50;
+    public int countProduct = 80;
+    private int Keisan()
+    {
+        return countPrice * countProduct;
+    }
+    #region ︽糶猭
+    private void ShootFire()
+    {
+        print("");
+    }
+    private void ShootIce()
+    {
+        print("");
+    }
+    #endregion
+
+    private void Shoot(string magicType, int ballSize = 12, int mana = 10)           //珹腹把计砞﹚  跑计摸 + 跑计  よ㊣钡块跑计计
+                                                                                     //Τ箇砞眔叫
+    {
+        //print("" + mana + "臸,妮┦" + magicType + "<size=" + ballSize + ">" + ballSize + "</size>" + "そだ臸紆");
+        print("<size=" + ballSize + ">" + "" + mana + "臸,妮┦" + magicType + +ballSize + "そだ臸紆" + "</size>");
+    }
+    private void BallSize(int size)
+    {
+        print(size + "そだ猭砃瞴");
+    }
+    //更 OVERLOAD 
+
+    private void Attack(int atk)
+    {
+        print("耊耊");
+    }
+    private void Attack(int atk, string far)
+    {
+        print("メメ" + atk + far);
+    }
+
 }

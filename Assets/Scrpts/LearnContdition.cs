@@ -4,6 +4,16 @@ public class LearnContdition : MonoBehaviour
 {
     public bool death = true;
     public int combo = 0;
+    public int AA = 5;
+
+    public enum HpPercent
+    {
+        a100, b50, A10
+    }
+
+    public HpPercent hpPercent;
+
+
     private void Start()
     {
         if (true)
@@ -18,14 +28,15 @@ public class LearnContdition : MonoBehaviour
 
     private void Update()
     {
-        //if (death)
-        //{
-        //    print("你已經死了");
-        //}
-        //else
-        // {
-        //    print("你已經活了");
-        // }
+        #region IF
+        if (death)
+        {
+            print("你已經死了");
+        }
+        else
+        {
+            print("你已經活了");
+        }
         if (combo < 100)
         {
             print("NO");
@@ -42,9 +53,38 @@ public class LearnContdition : MonoBehaviour
             print("GREAT");
         }
 
+        #endregion
+        #region SWITCH
+        switch (AA)
+        {
+            case 5:
+                print("我有" + AA + "個蘋果");
+                break;
+            case 10:
+                print("我有" + AA + "個蘋果");
+                break;
 
+            default:
+                break;
 
+        }
 
+        switch (hpPercent)
+        {
+            case HpPercent.a100:
+                print("熱血滿滿");
+                break;
+            case HpPercent.b50:
+                print("還有一半血量");
+                break;
+            case HpPercent.A10:
+                print("快乾了");
+                break;
+            default:
+                break;
+        }
+
+        #endregion
     }
 
 }

@@ -7147,7 +7147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &541680401
 Transform:
   m_ObjectHideFlags: 0
@@ -7177,6 +7177,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   death: 0
   combo: 201
+  AA: 5
+  hpPercent: 0
 --- !u!4 &570543176 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400032, guid: a58d63122b09e9144938cd6a1ece4824, type: 3}
@@ -9492,6 +9494,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5055672950112541147, guid: c578fcaab9036a04c9e395c259d0c39c, type: 3}
   m_PrefabInstance: {fileID: 1372675798}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1378513277 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100060, guid: a58d63122b09e9144938cd6a1ece4824, type: 3}
+  m_PrefabInstance: {fileID: 773349675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1378513279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378513277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6547a6fc80150a8478b89ca3c6ad9d7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 1743609832}
+  speedTurn: 0
+  bullet: {fileID: 3445248339337367614, guid: a5d5a2a28b946bb4eb813affb1c639e7, type: 3}
+  howManyCanShootBullet: 15
 --- !u!1 &1396682684
 GameObject:
   m_ObjectHideFlags: 0
@@ -10857,7 +10880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1743609833
 Transform:
   m_ObjectHideFlags: 0

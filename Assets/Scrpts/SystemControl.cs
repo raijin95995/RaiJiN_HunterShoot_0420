@@ -4,7 +4,8 @@ using UnityEngine;
 namespace RAIJIN
 {
     /// <summary>
-    /// 設定角色事件 
+    /// 玩家控制系統
+    /// 旋轉角色 發射彈珠
     /// </summary>
     public class SystemControl : MonoBehaviour
     {
@@ -22,11 +23,30 @@ namespace RAIJIN
         [Tooltip("殘彈數2/8"), Header("子彈總數"), Range(0, 100)]
         public int howManyCanShootBullet = 15;
         #endregion
-        
-        
+
+
         #region 事件
         #endregion
+
         #region 方法
+        /// <summary>
+        /// 旋轉角色
+        /// </summary>
+        private void TurnCharacter()
+        { 
+        }
+        /// <summary>
+        /// 發射子彈
+        /// </summary>
+        private void ShootBullet()
+        { 
+        }
+        /// <summary>
+        /// 回收子彈
+        /// </summary>
+        private void RecycleBullet() 
+        { 
+        }
         #endregion
 
     }

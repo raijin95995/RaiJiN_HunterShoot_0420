@@ -12,12 +12,17 @@ public class LearnAPIStatic : MonoBehaviour
     /// 1.取得
     /// 類別名稱.靜態屬性名稱
     /// 2.設定   唯讀不能設定  READ ONLY
+    /// 類別名稱.靜態屬性名稱 =  值 (依照屬性設定)
+    /// 
     /// </summary>
     private void Start()
     {
         
         print("隨機值:" + 100 * Random.value );
-        print("我開:" + Mathf.Infinity);
+        print("我開:" + Mathf.Infinity );
+        Cursor.visible = false; //滑鼠不見~
+
+
     }
 
 

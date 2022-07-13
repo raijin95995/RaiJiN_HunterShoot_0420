@@ -10446,6 +10446,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1572501837 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400060, guid: 56dd4edec19a3b04195448769c085dfc, type: 3}
+  m_PrefabInstance: {fileID: 913730219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1586604283
 GameObject:
   m_ObjectHideFlags: 0
@@ -10573,6 +10578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterTran: {fileID: 1433823936}
+  isLight: {fileID: 1971127093}
+  turtleTran: {fileID: 1572501837}
 --- !u!4 &1593277684
 Transform:
   m_ObjectHideFlags: 0

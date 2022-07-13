@@ -22,7 +22,7 @@ public class LearnContdition : MonoBehaviour
         }
         else
         {
-            print("¶Ù¶Ù §Ú¬O¿ù»~");
+            //print("¶Ù¶Ù §Ú¬O¿ù»~");
         }
     }
 

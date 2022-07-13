@@ -22,10 +22,24 @@ namespace RAIJIN
         //子彈數量
         [Tooltip("殘彈數2/8"), Header("子彈總數"), Range(0, 100)]
         public int howManyCanShootBullet = 15;
+        [Tooltip("發射"), Header("發射位置"),]
+        public Transform traShootPoint;
+        [Header("攻擊動畫")]
+        public string perAttack = "觸發攻擊";
+
+        public Animator anime;
+
+
         #endregion
 
 
         #region 事件
+
+        private void Update()
+        {
+            ShootBullet();
+        }
+
         #endregion
 
         #region 方法
@@ -40,6 +54,11 @@ namespace RAIJIN
         /// </summary>
         private void ShootBullet()
         { 
+            if(Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                print("放開左鍵");
+                Instantiate(bullet,traShootPoint.position,Quaternion.identity);
+            }
         }
         /// <summary>
         /// 回收子彈

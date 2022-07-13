@@ -1,4 +1,3 @@
-
 using UnityEngine;
 /// <summary>
 /// 學習靜態API
@@ -21,6 +20,9 @@ public class LearnAPIStatic : MonoBehaviour
         print("隨機值:" + 100 * Random.value );
         print("我開:" + Mathf.Infinity );
         Cursor.visible = false; //滑鼠不見~
+
+        float r = Random.Range(1.0f, 2.0f);
+        print("數值:" + r * 10);
 
 
     }

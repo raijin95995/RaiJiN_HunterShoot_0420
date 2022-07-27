@@ -13,13 +13,13 @@ namespace RAIJIN
     {
         #region 資料
         //箭頭
-        [Tooltip("就是個箭頭"), Header("箭頭"), ]
+        [Tooltip("就是個箭頭"), Header("箭頭"),]
         public GameObject arrow;
         //旋轉速度
         [Tooltip("旋轉~"), Header("旋轉速度"), Range(0, 500)]
         public float speedTurn;
         //子彈預製物
-        [Tooltip("發射"), Header("子彈"), ]
+        [Tooltip("發射"), Header("子彈"),]
         public GameObject bullet;
         //子彈數量
         [Tooltip("殘彈數2/8"), Header("子彈總數"), Range(0, 100)]
@@ -33,9 +33,9 @@ namespace RAIJIN
         [Header("子彈發射間隔"), Range(0, 2)]
         public float intervalBullet = 0.5f;
 
-        private bool canShootBullet = true; 
+        private bool canShootBullet = true;
 
-        public TextMeshProUGUI textBulletCount; 
+        public TextMeshProUGUI textBulletCount;
 
         private Animator anime;
         /// <summary>
@@ -64,6 +64,9 @@ namespace RAIJIN
 
             cameraMouse = GameObject.Find("控制旋轉位置攝影機").GetComponent<Camera>();
             traMouse = GameObject.Find("轉換座標實體").GetComponent<Transform>();
+
+            Physics.IgnoreLayerCollision(3, 3);
+
         }
 
 
@@ -81,10 +84,10 @@ namespace RAIJIN
         /// </summary>
         private void TurnCharacter()
         {
-            if (!canShootBullet) return ;
-            
+            if (!canShootBullet) return;
+
             Vector3 posMouse = Input.mousePosition;
-            
+
             //print("滑鼠位置:" + posMouse);
             posMouse.z = 25;
 
@@ -111,7 +114,7 @@ namespace RAIJIN
             // 放開 滑鼠左鍵 隱藏箭頭 生成並發射彈珠
             else if (Input.GetKeyUp(KeyCode.Mouse0))
             {
-                
+
                 canShootBullet = false;
                 arrow.SetActive(false);
                 StartCoroutine(SpawnBullet());
@@ -146,8 +149,8 @@ namespace RAIJIN
         /// <summary>
         /// 回收子彈
         /// </summary>
-        private void RecycleBullet() 
-        { 
+        private void RecycleBullet()
+        {
         }
         #endregion
 

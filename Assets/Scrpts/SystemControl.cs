@@ -137,7 +137,7 @@ namespace RAIJIN
                 // 暫存彈珠 取得剛體元件 添加推力 (角色.前方 * 速度)
                 // transform.forward 角色的前方
                 tempBullet.GetComponent<Rigidbody>().AddForce(transform.forward * speedBullet);
-                total--;
+                total--;  //顯示減少子彈數字
 
                 if (total > 0) textBulletCount.text = "x" + total;
                 else if (total == 0) textBulletCount.text = "";

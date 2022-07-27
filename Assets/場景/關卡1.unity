@@ -8448,6 +8448,7 @@ MonoBehaviour:
   - {fileID: 2125235547}
   - {fileID: 1935241648}
   - {fileID: 1586604287}
+  EatBullet: {fileID: 925212125211433469, guid: 56ed89f36dc438d4dbf93153d32c1427, type: 3}
 --- !u!1 &1022116187
 GameObject:
   m_ObjectHideFlags: 0

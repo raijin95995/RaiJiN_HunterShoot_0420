@@ -9682,7 +9682,7 @@ MonoBehaviour:
   howManyCanShootBullet: 15
   traShootPoint: {fileID: 1512706396}
   perAttack: "\u89F8\u767C\u653B\u64CA"
-  speedBullet: 2100
+  speedBullet: 3550
   intervalBullet: 0.588
   textBulletCount: {fileID: 1622476026}
 --- !u!1 &1396682684

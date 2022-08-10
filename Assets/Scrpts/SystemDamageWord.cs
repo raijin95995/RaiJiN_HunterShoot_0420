@@ -12,12 +12,12 @@ namespace RAIJIN
     {
 
         [Header("¶¡¹j"), SerializeField]
-        private float waitTime = 0.025f; 
+        private float waitTime = 0.025f;
 
         public float damage;
 
         [Header("¬õ¦â¶Ë®`"), SerializeField]
-        private Color redColor = new Color(255,0.1f,0.1f);
+        private Color redColor = new Color(255, 0.1f, 0.1f);
         [Header("¾ï¦â¶Ë®`"), SerializeField]
         private Color orangeColor = new Color(255, 150, 50);
 
@@ -65,7 +65,7 @@ namespace RAIJIN
 
             for (int i = 0; i < 10; i++)
             {
-                textDamage.color -= new Color(0,0,0,0.1f);
+                textDamage.color -= new Color(0, 0, 0, 0.1f);
                 yield return new WaitForSeconds(waitTime);
             }
 
@@ -111,7 +111,7 @@ namespace RAIJIN
 
                 }
             }
-            else if (damage >= 100 )
+            else if (damage >= 100)
             {
 
                 for (int i = 0; i < 20; i++)
@@ -122,7 +122,7 @@ namespace RAIJIN
 
                 }
             }
-           
+
         }
 
     }

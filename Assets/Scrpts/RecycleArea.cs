@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.Events;
 
 namespace RAIJIN
 { 
@@ -9,9 +9,16 @@ namespace RAIJIN
     public class RecycleArea : MonoBehaviour
     {
 
+        public UnityEvent onRecyele;
+
         private void OnTriggerEnter(Collider other)
         {
-            print("我被穿過了~~~");
+
+            if(other.name.Contains("子彈"))
+            {
+                print("我被穿過了~~~");
+            }
+            
 
 
         }

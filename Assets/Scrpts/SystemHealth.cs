@@ -19,6 +19,11 @@ namespace RAIJIN
         private TextMeshProUGUI textHp;
         [Header("怪物資料"), SerializeField]
         private DataEnemy dataEnemy;
+        [Header("怪物動畫"), SerializeField]
+        private Animator monsterAnime;
+
+        private string getHit = "受傷";
+
 
         private float hp;
 
@@ -26,6 +31,8 @@ namespace RAIJIN
         {
             hp = dataEnemy.hp;
             textHp.text = hp.ToString();
+
+            //monsterAnime = GetComponent<Animator>();
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -42,7 +49,11 @@ namespace RAIJIN
 
             imgHp.fillAmount = hp / dataEnemy.hp;
 
+            monsterAnime.SetTrigger(getHit);
+
             if (hp <= 0) Die();
+
+
 
         }
 

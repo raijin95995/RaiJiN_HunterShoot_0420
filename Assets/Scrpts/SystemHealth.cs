@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 using TMPro;
 
 namespace RAIJIN
@@ -29,10 +30,11 @@ namespace RAIJIN
 
         private void Awake()
         {
+            
             hp = dataEnemy.hp;
             textHp.text = hp.ToString();
 
-            //monsterAnime = GetComponent<Animator>();
+            
         }
 
         private void OnCollisionEnter(Collision collision)
@@ -41,15 +43,22 @@ namespace RAIJIN
             GetHurt();
         }
 
-        void GetHurt()
+        private  void GetHurt()
         {
-            hp -= 100;
+            float getDamage = 50;
+            hp -= getDamage;
 
             textHp.text = hp.ToString();
 
             imgHp.fillAmount = hp / dataEnemy.hp;
 
             monsterAnime.SetTrigger(getHit);
+
+            Vector3 pos = transform.position + Vector3.up;
+
+            SystemDamageWord tempDamage = Instantiate(goDamage, pos, Quaternion.Euler(45, 0, 0)).GetComponent<SystemDamageWord>();
+            
+            tempDamage.damage = getDamage;
 
             if (hp <= 0) Die();
 

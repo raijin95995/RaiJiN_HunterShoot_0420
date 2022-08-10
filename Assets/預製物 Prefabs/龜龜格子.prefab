@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5edbeb869130b3245861ef5949f97743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goDamage: {fileID: 6317820993412618979}
+  goDamage: {fileID: 7568432341767328192, guid: 955306564e3292341bb313b618c88587, type: 3}
   imgHp: {fileID: 6317820993615851891}
   textHp: {fileID: 6317820992358839365}
   dataEnemy: {fileID: 11400000, guid: c7227be953054964b933f94e820376da, type: 2}
@@ -181,11 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &6317820993412618979 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 65727773996143833, guid: 661ef3c0ceeff714e8456ece8c55884b, type: 3}
-  m_PrefabInstance: {fileID: 6288410153313603130}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &6317820993412619007 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 65727773996143813, guid: 661ef3c0ceeff714e8456ece8c55884b, type: 3}

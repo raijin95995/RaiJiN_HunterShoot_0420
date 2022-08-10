@@ -11,6 +11,9 @@ namespace RAIJIN
     public class SystemDamageWord : MonoBehaviour
     {
 
+        [Header("¶¡¹j"), SerializeField]
+        private float waitTime = 0.025f; 
+
         public float damage;
 
         [Header("¬õ¦â¶Ë®`"), SerializeField]
@@ -22,7 +25,7 @@ namespace RAIJIN
         private float limitRight;
         private TextMeshProUGUI textDamage;
 
-        private void Awake()
+        private void Start()
         {
             textDamage = GetComponentInChildren<TextMeshProUGUI>();
             textDamage.text = damage.ToString();
@@ -30,7 +33,7 @@ namespace RAIJIN
             if (damage >= 200) textDamage.color = redColor;
             else if (damage >= 100) textDamage.color = orangeColor;
 
-            limitUp = Random.Range(0.2f, 0.6f);
+            limitUp = Random.Range(0.4f, 0.6f);
 
             int r = Random.Range(0, 2);
 
@@ -39,6 +42,8 @@ namespace RAIJIN
 
             StartCoroutine(MoveUp());
             StartCoroutine(MoveRight());
+            StartCoroutine(ScaleEffect());
+            //StartCoroutine(ColorEffect());
 
         }
 
@@ -48,8 +53,20 @@ namespace RAIJIN
             for (int i = 0; i < 10; i++)
             {
                 transform.position += transform.up * limitUp;
-                yield return new WaitForSeconds(0.02f);
+                yield return new WaitForSeconds(waitTime);
 
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                transform.position -= transform.up * limitUp;
+                yield return new WaitForSeconds(waitTime);
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                textDamage.color -= new Color(0,0,0,0.1f);
+                yield return new WaitForSeconds(waitTime);
             }
 
         }
@@ -59,13 +76,54 @@ namespace RAIJIN
             for (int i = 0; i < 10; i++)
             {
                 transform.position += transform.right * limitRight;
-                yield return new WaitForSeconds(0.02f);
+                yield return new WaitForSeconds(waitTime);
 
             }
 
         }
 
+        private IEnumerator ScaleEffect()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                transform.localScale += Vector3.one * 0.001f;
+                yield return new WaitForSeconds(waitTime);
 
+            }
+            for (int i = 0; i < 4; i++)
+            {
+                transform.localScale -= Vector3.one * 0.001f;
+                yield return new WaitForSeconds(waitTime);
+
+            }
+        }
+
+        private IEnumerator ColorEffect()
+        {
+
+            if (damage >= 200)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    textDamage.color -= new Color(10, 0, 0, 0.05f);
+
+                    yield return new WaitForSeconds(waitTime);
+
+                }
+            }
+            else if (damage >= 100 )
+            {
+
+                for (int i = 0; i < 20; i++)
+                {
+                    textDamage.color -= new Color(10, 10, 10, 0.05f);
+
+                    yield return new WaitForSeconds(0.005f);
+
+                }
+            }
+           
+        }
 
     }
 

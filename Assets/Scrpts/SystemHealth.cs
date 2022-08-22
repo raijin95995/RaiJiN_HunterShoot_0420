@@ -28,12 +28,17 @@ namespace RAIJIN
 
         private float hp;
 
+
+
+        private SystemSpawn systemSpawn;
+
         private void Awake()
         {
             
             hp = dataEnemy.hp;
             textHp.text = hp.ToString();
 
+            systemSpawn = GameObject.Find("生怪系統").GetComponent<SystemSpawn>();
             
         }
 
@@ -68,8 +73,9 @@ namespace RAIJIN
 
         void Die()
         {
-            print("你已經死了");
-
+            //print("你已經死了");
+            Destroy(gameObject);
+            systemSpawn.totalCountEnemysLive--;
         }
 
     }

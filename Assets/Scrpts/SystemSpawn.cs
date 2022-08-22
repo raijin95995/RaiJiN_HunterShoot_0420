@@ -25,6 +25,8 @@ namespace RAIJIN
         [Header("子彈格子"), SerializeField]
         private GameObject EatBullet;
 
+        [HideInInspector]
+        public int totalCountEnemysLive; //回合後多少物件存活
 
         #endregion
 
@@ -42,7 +44,7 @@ namespace RAIJIN
         #region 方法
 
 
-        void SpawnRandom()
+        public void SpawnRandom()
         {
             int min = 2;  //最小值
             int max = ListSecondPlace.Count;  //抓取清單長度
@@ -83,7 +85,8 @@ namespace RAIJIN
                 }
 
 
-
+                totalCountEnemysLive++;
+                print("生成了幾個:" + totalCountEnemysLive);
             }
 
         }

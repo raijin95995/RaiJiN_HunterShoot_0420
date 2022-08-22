@@ -33,7 +33,8 @@ namespace RAIJIN
         [Header("子彈發射間隔"), Range(0, 2)]
         public float intervalBullet = 0.5f;
 
-        private bool canShootBullet = true;
+        [HideInInspector] 
+        public bool canShootBullet = true;   //是否可以發射子彈
 
         public TextMeshProUGUI textBulletCount;
 
@@ -151,6 +152,8 @@ namespace RAIJIN
         /// </summary>
         private void RecycleBullet()
         {
+
+
         }
         #endregion
 

@@ -1837,6 +1837,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcea8e63e920b8f4fa65c08b318d2d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onTurnEnemy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &408386560
 Transform:
   m_ObjectHideFlags: 0
@@ -8493,6 +8496,7 @@ MonoBehaviour:
   - {fileID: 1935241648}
   - {fileID: 1586604287}
   EatBullet: {fileID: 925212125211433469, guid: 56ed89f36dc438d4dbf93153d32c1427, type: 3}
+  totalCountEnemysLive: 0
 --- !u!1 &1022116187
 GameObject:
   m_ObjectHideFlags: 0
@@ -9723,11 +9727,12 @@ MonoBehaviour:
   arrow: {fileID: 1743609832}
   speedTurn: 7
   bullet: {fileID: 3445248339337367614, guid: a5d5a2a28b946bb4eb813affb1c639e7, type: 3}
-  howManyCanShootBullet: 15
+  howManyCanShootBullet: 6
   traShootPoint: {fileID: 1512706396}
   perAttack: "\u89F8\u767C\u653B\u64CA"
   speedBullet: 3500
   intervalBullet: 0.588
+  canShootBullet: 1
   textBulletCount: {fileID: 1622476026}
 --- !u!1 &1390283439
 GameObject:
@@ -9769,7 +9774,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390283439}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -9821,7 +9826,7 @@ Transform:
   m_GameObject: {fileID: 1390283439}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.67, z: -11.35}
-  m_LocalScale: {x: 16.1, y: 1.94, z: 1.48}
+  m_LocalScale: {x: 26.65, y: 1.94, z: 1.48}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -13298,6 +13303,10 @@ PrefabInstance:
     - target: {fileID: 7568432341767328192, guid: 955306564e3292341bb313b618c88587, type: 3}
       propertyPath: m_Name
       value: "\u50B7\u5BB3\u6578\u5B57\u7CFB\u7D71"
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568432341767328192, guid: 955306564e3292341bb313b618c88587, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7568432341767328220, guid: 955306564e3292341bb313b618c88587, type: 3}
       propertyPath: m_Pivot.x

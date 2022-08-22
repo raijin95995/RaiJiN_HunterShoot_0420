@@ -16,7 +16,8 @@ namespace RAIJIN
 
             if(other.name.Contains("子彈"))
             {
-                print("我被穿過了~~~");
+                //print("我被穿過了~~~");
+                onRecyele.Invoke();
             }
             
 

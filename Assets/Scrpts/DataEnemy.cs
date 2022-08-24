@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 namespace RAIJIN
@@ -13,6 +12,12 @@ namespace RAIJIN
         public float hp;
         [Header("傷害"), Range(0, 1000)]
         public float damage;
+        [Header("金幣預製物")]
+        public GameObject coin;
+        [Header("設定掉落數量範圍")]
+        public Vector2Int v2CoinRange;
+
+
 
     }
 }

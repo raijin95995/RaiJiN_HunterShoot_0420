@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 200
   damage: 100
+  coin: {fileID: 781594840785799454, guid: 39321c659fa4fe44b94e874c64ba2930, type: 3}
+  v2CoinRange: {x: 5, y: 15}

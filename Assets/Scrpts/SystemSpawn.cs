@@ -16,8 +16,8 @@ namespace RAIJIN
         [Header("怪物陣列"), SerializeField]
         private GameObject[] monsters;
 
-        //[Header("生成位置 第二排"), SerializeField]
-        //private Transform[] traSecondPlace ;
+        [Header("生成位置 第二排"), SerializeField]
+        private Transform[] traSecondPlace ;
 
         [Header("生成位置 第二排"), SerializeField]
         private List<Transform> ListSecondPlace = new List<Transform>();
@@ -47,13 +47,13 @@ namespace RAIJIN
         public void SpawnRandom()
         {
             int min = 2;  //最小值
-            int max = ListSecondPlace.Count;  //抓取清單長度
-            //int max = traSecondPlace.Length;  //抓取陣列長度
+           // int max = ListSecondPlace.Count;  //抓取清單長度
+            int max = traSecondPlace.Length;  //抓取陣列長度
             int randomCount = Random.Range(min, max);//不會抓到最大值
 
             print(randomCount);
 
-            //ListSecondPlace = traSecondPlace.ToList();    用程式抓去清單
+            ListSecondPlace = traSecondPlace.ToList();    //用程式抓去清單
 
             System.Random random = new System.Random();
 

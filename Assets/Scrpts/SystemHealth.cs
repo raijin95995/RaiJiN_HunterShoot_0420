@@ -76,7 +76,28 @@ namespace RAIJIN
             //print("你已經死了");
             Destroy(gameObject);
             systemSpawn.totalCountEnemysLive--;
+            DropCoin();
         }
+
+        void DropCoin()
+        {
+            int ran = Random.Range(dataEnemy.v2CoinRange.x, dataEnemy.v2CoinRange.y);
+
+            for (int i = 0; i < ran; i++)
+            {
+                float ranX = Random.Range(-1, 1);
+                float ranZ = Random.Range(-1, 1);
+
+                Instantiate(
+                                dataEnemy.coin,
+                                transform.position + new Vector3(ranX, 2.7f, ranZ),
+                                Quaternion.identity
+                                );
+
+            }
+
+        }
+
 
     }
 }

@@ -19,7 +19,12 @@ namespace RAIJIN
 
 
 
+        public void AddCoin()
+        {
+            totalCoin++;
+            textCoin.text = totalCoin.ToString();
 
+        }
 
 
 

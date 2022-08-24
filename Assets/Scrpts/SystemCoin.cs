@@ -12,8 +12,9 @@ namespace RAIJIN
         private float delayTime = 1.5f;
         private bool canFly = false;
         public float flySpeed = 5.0f;
-        
         private Transform traCoinFlyTarget;
+        private ManagerCoin managerCoin;
+
 
         private void Awake()
         {
@@ -22,6 +23,7 @@ namespace RAIJIN
             Physics.IgnoreLayerCollision(6, 7);
 
             traCoinFlyTarget = GameObject.Find("金幣回歸位置").transform;
+            managerCoin = GameObject.Find("金幣管理系統").GetComponent<ManagerCoin>();
 
             Invoke("StartFly", delayTime);
         }
@@ -59,8 +61,11 @@ namespace RAIJIN
         {
             float dis = Vector3.Distance(transform.position, traCoinFlyTarget.position);
 
-            if (dis < 2) Destroy(gameObject);
-
+            if (dis < 2)
+            {
+                managerCoin.AddCoin();
+                Destroy(gameObject);
+            }
         }
 
     }

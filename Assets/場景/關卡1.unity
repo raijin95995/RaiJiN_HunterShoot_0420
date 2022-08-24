@@ -9457,7 +9457,7 @@ GameObject:
   - component: {fileID: 1302792642}
   - component: {fileID: 1302792641}
   m_Layer: 5
-  m_Name: "\u91D1\u5E63 \u6578\u5B57 "
+  m_Name: "\u91D1\u5E63 \u6578\u5B57"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

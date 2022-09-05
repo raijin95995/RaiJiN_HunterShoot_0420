@@ -31,6 +31,9 @@ namespace RAIJIN
 		[SerializeField] private Vector3 v3DamageSize;
 		[SerializeField] private Vector3 v3DamagePosition;
 
+		[Header("怪物圖層"), SerializeField]
+		private LayerMask layerDamage;
+
 
 
 		private string getHit = "受傷";
@@ -125,13 +128,16 @@ namespace RAIJIN
 
 		private void CheckObjectINDamageArea()
 		{
-			Collider[] hits = Physics.OverlapBox(v3DamagePosition, v3DamageSize / 2);
+			Collider[] hits = Physics.OverlapBox(v3DamagePosition, v3DamageSize / 2, Quaternion.identity, layerDamage);
 
 			if (hits.Length > 0)
 			{
 
 
 				print("不要過來啊RRR:" + hits[0]);
+
+				GetHurt();
+				Destroy(hits[0].gameObject);
 
 			}
 		}

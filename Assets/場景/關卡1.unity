@@ -2025,7 +2025,7 @@ Transform:
   - {fileID: 1022116191}
   - {fileID: 1396682688}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &467127201
 PrefabInstance:
@@ -7850,7 +7850,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &749713940 stripped
 Transform:
@@ -9916,8 +9916,11 @@ MonoBehaviour:
   dataEnemy: {fileID: 11400000, guid: ae1c8c133f12a2a449b61882548770ad, type: 2}
   monsterAnime: {fileID: 1378513280}
   nameHurtObject: 
-  v3DamageSize: {x: 16, y: 8, z: 6}
-  v3DamagePosition: {x: 0, y: 1, z: -8}
+  v3DamageSize: {x: 12, y: 10, z: 6}
+  v3DamagePosition: {x: 0, y: 2, z: -8}
+  layerDamage:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1390283439
 GameObject:
   m_ObjectHideFlags: 0

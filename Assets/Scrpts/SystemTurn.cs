@@ -24,6 +24,8 @@ namespace RAIJIN
 		private int countEatBullet;
 
 
+
+
 		private void Awake()
 		{
 			systemControl = GameObject.Find("狗狗").GetComponent<SystemControl>();
@@ -64,6 +66,13 @@ namespace RAIJIN
 			systemControl.canShootBullet = true;
 			canSpawn = true;
 			totalRecycleBullets = 0;
+
+			systemControl.howManyCanShootBullet += countEatBullet;
+			countEatBullet = 0;
+
+			int bulletTotal = systemControl.howManyCanShootBullet;
+
+			systemControl.textBulletCount.text = "x" + bulletTotal;  //回合開始 顯示目前總數  含吃到
 		}
 
 
@@ -74,7 +83,7 @@ namespace RAIJIN
 		}
 
 
-
+	
 
 
 

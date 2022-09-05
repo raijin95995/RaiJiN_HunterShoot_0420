@@ -9,7 +9,7 @@ namespace RAIJIN
         [Header("§ðÀ»¸ê®Æ"), SerializeField]
         private DataAttack dataAttack;
 
-
+        [HideInInspector]
         public float valueAttck;
 
         private void Awake()

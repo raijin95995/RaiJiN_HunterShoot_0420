@@ -11,7 +11,7 @@ namespace RAIJIN
 
         [Header("攻擊力"), Range(0, 10000)]
         public float attack;
-        [Header("攻擊力浮動"), Range(0, 100)]
+        [Header("攻擊力浮動 增減值"), Range(0, 100)]
         public float attackFloat;
 
     }

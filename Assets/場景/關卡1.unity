@@ -9890,7 +9890,7 @@ MonoBehaviour:
   traShootPoint: {fileID: 1512706396}
   perAttack: "\u89F8\u767C\u653B\u64CA"
   speedBullet: 2000
-  intervalBullet: 0.5
+  intervalBullet: 0.1
   canShootBullet: 1
   textBulletCount: {fileID: 1622476026}
 --- !u!95 &1378513280 stripped
@@ -9952,8 +9952,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.9983783, y: 1, z: 1}
+  m_Center: {x: 0.13575105, y: 0, z: 0}
 --- !u!23 &1390283441
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 namespace RAIJIN
 {
@@ -8,6 +9,8 @@ namespace RAIJIN
 	/// </summary>
 	public class SystemTurn : MonoBehaviour
 	{
+
+		#region 戈
 		private SystemControl systemControl;
 		private SystemSpawn systemSpawn;
 		private RecycleArea recycleArea;
@@ -23,19 +26,23 @@ namespace RAIJIN
 
 		private int countEatBullet;
 
+		private TextMeshProUGUI textFloorCount;
 
+		private int countFloor = 1;
 
+		#endregion
 
 		private void Awake()
 		{
 			systemControl = GameObject.Find("").GetComponent<SystemControl>();
 			systemSpawn = GameObject.Find("ネ┣╰参").GetComponent<SystemSpawn>();
 			recycleArea = GameObject.Find("Μ跋办").GetComponent<RecycleArea>();
+			textFloorCount = GameObject.Find("糷计 计").GetComponent<TextMeshProUGUI>();
 
 			recycleArea.onRecyele.AddListener(RecycleBullet);
 		}
 
-
+		#region よ猭
 		private void RecycleBullet()
 		{
 			totalCountBullets = systemControl.howManyCanShootBullet;
@@ -47,6 +54,13 @@ namespace RAIJIN
 			{
 				print("turn over");
 				onTurnEnemy.Invoke();
+
+				if (FindObjectsOfType<SystemMove>().Length == 0)
+				{
+					Invoke("MoveEndSpawnEnemy", 1f);
+
+				}
+
 			}
 		}
 
@@ -73,6 +87,9 @@ namespace RAIJIN
 			int bulletTotal = systemControl.howManyCanShootBullet;
 
 			systemControl.textBulletCount.text = "x" + bulletTotal;  //秨﹍ 陪ボヘ玡羆计  
+
+			countFloor++;
+			textFloorCount.text = countFloor.ToString();
 		}
 
 
@@ -81,9 +98,9 @@ namespace RAIJIN
 		{
 			countEatBullet++;
 		}
+		#endregion
 
 
-	
 
 
 

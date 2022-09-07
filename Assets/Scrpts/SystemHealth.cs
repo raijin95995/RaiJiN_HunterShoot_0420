@@ -65,14 +65,14 @@ namespace RAIJIN
 		private void OnCollisionEnter(Collision collision)
 		{
 
-			if (collision.gameObject.name.Contains(nameHurtObject)) GetHurt();
+			if (collision.gameObject.name.Contains(nameHurtObject)) GetHurt(collision.gameObject.GetComponent<SystemAttack>().valueAttck);
 
 		}
 
-		private void GetHurt()
+		private void GetHurt(float damage)
 		{
-			float getDamage = 50;
-			hp -= getDamage;
+			
+			hp -= damage;
 
 			textHp.text = hp.ToString();
 
@@ -84,7 +84,7 @@ namespace RAIJIN
 
 			SystemDamageWord tempDamage = Instantiate(goDamage, pos, Quaternion.Euler(45, 0, 0)).GetComponent<SystemDamageWord>();
 
-			tempDamage.damage = getDamage;
+			tempDamage.damage = damage;
 
 			if (hp <= 0) Die();
 
@@ -136,7 +136,7 @@ namespace RAIJIN
 
 				print("不要過來啊RRR:" + hits[0]);
 
-				GetHurt();
+				GetHurt(hits[0].GetComponent<SystemAttack>().valueAttck);
 				Destroy(hits[0].gameObject);
 
 			}

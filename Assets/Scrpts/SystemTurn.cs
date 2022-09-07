@@ -31,6 +31,9 @@ namespace RAIJIN
 		private int countFloor = 1;
 		private int countFloorMax = 2;
 		private bool isFloorMax;
+
+		private SystemEnd systemEnd;
+
 		#endregion
 
 		private void Awake()
@@ -39,6 +42,7 @@ namespace RAIJIN
 			systemSpawn = GameObject.Find("生怪系統").GetComponent<SystemSpawn>();
 			recycleArea = GameObject.Find("回收區域").GetComponent<RecycleArea>();
 			textFloorCount = GameObject.Find("層數 數字").GetComponent<TextMeshProUGUI>();
+			systemEnd = FindObjectOfType<SystemEnd>();
 
 			recycleArea.onRecyele.AddListener(RecycleBullet);
 		}
@@ -73,7 +77,7 @@ namespace RAIJIN
 				canSpawn = false;
 				systemSpawn.SpawnRandom();
 			}
-			
+
 			Invoke("PlayerTurn", 1f);
 
 
@@ -104,9 +108,11 @@ namespace RAIJIN
 			{
 				if (FindObjectsOfType<SystemMove>().Length == 0)
 				{
-					
+					print("YA 通關");
+					systemEnd.ShowEndTittle("關卡成功"); // 這是獲勝的文字
+
 				}
-			
+
 			}
 
 		}

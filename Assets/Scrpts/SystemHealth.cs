@@ -41,9 +41,13 @@ namespace RAIJIN
 
 		private float hp;
 
-
+		[Header("是否為玩家"), SerializeField]
+		private bool isPlayer;
 
 		private SystemSpawn systemSpawn;
+
+		private SystemEnd systemEnd;
+
 
 		private void Awake()
 		{
@@ -53,6 +57,7 @@ namespace RAIJIN
 
 			systemSpawn = GameObject.Find("生怪系統").GetComponent<SystemSpawn>();
 
+			systemEnd = FindObjectOfType<SystemEnd>();
 		}
 
 		private void Update()
@@ -71,7 +76,7 @@ namespace RAIJIN
 
 		private void GetHurt(float damage)
 		{
-			
+
 			hp -= damage;
 
 			textHp.text = hp.ToString();
@@ -94,10 +99,17 @@ namespace RAIJIN
 
 		void Die()
 		{
-			//print("你已經死了");
-			Destroy(gameObject);
-			systemSpawn.totalCountEnemysLive--;
-			DropCoin();
+
+			if (isPlayer) systemEnd.ShowEndTittle("你已經死了");  //玩家死亡文字
+			else
+			{
+				//print("你已經死了");
+				Destroy(gameObject);
+				systemSpawn.totalCountEnemysLive--;
+				DropCoin();
+
+			}
+
 		}
 
 		void DropCoin()

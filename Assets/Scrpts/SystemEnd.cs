@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using System.Collections;
 
@@ -21,6 +22,10 @@ namespace RAIJIN
 			btnRestart = GameObject.Find("重新開始按鈕").GetComponent<Button>();
 			btnNext = GameObject.Find("下一關按鈕").GetComponent<Button>();
 
+			btnRestart.onClick.AddListener(Restart);
+			btnNext.onClick.AddListener(Quit);
+
+
 		}
 
 
@@ -35,7 +40,7 @@ namespace RAIJIN
 			for (int i = 0; i < 10; i++)
 			{
 				groupFianl.alpha += 0.1f;
-				yield return new WaitForSeconds(0.02f);
+				yield return new WaitForSeconds(0.01f);
 			}
 
 			groupFianl.interactable = true;
@@ -43,6 +48,17 @@ namespace RAIJIN
 
 		}
 
+
+		private void Restart()
+		{
+			string nameCurrent = SceneManager.GetActiveScene().name;
+			SceneManager.LoadScene(nameCurrent);
+		}
+
+		private void Quit()
+		{
+			Application.Quit();
+		}
 
 
 	}

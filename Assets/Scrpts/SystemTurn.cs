@@ -29,7 +29,8 @@ namespace RAIJIN
 		private TextMeshProUGUI textFloorCount;
 
 		private int countFloor = 1;
-
+		private int countFloorMax = 2;
+		private bool isFloorMax;
 		#endregion
 
 		private void Awake()
@@ -67,8 +68,12 @@ namespace RAIJIN
 		public void MoveEndSpawnEnemy()
 		{
 			if (!canSpawn) return;
-			canSpawn = false;
-			systemSpawn.SpawnRandom();
+			if (!isFloorMax)
+			{
+				canSpawn = false;
+				systemSpawn.SpawnRandom();
+			}
+			
 			Invoke("PlayerTurn", 1f);
 
 
@@ -84,12 +89,26 @@ namespace RAIJIN
 			systemControl.howManyCanShootBullet += countEatBullet;
 			countEatBullet = 0;
 
+			if (countFloor < countFloorMax)
+			{
+				countFloor++;
+				textFloorCount.text = countFloor.ToString();
+			}
+
 			int bulletTotal = systemControl.howManyCanShootBullet;
 
 			systemControl.textBulletCount.text = "x" + bulletTotal;  //回合開始 顯示目前總數  含吃到
 
-			countFloor++;
-			textFloorCount.text = countFloor.ToString();
+			if (countFloor == countFloorMax) isFloorMax = true;
+			if (isFloorMax)
+			{
+				if (FindObjectsOfType<SystemMove>().Length == 0)
+				{
+					
+				}
+			
+			}
+
 		}
 
 

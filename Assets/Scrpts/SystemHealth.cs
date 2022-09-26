@@ -74,6 +74,14 @@ namespace RAIJIN
 
 		}
 
+
+		[SerializeField, Header("受傷音效")]
+		private AudioClip soundHurt;
+		[SerializeField, Header("死亡音效")]
+		private AudioClip soundDie;
+
+
+
 		private void GetHurt(float damage)
 		{
 
@@ -93,16 +101,19 @@ namespace RAIJIN
 
 			if (hp <= 0) Die();
 
-
+			SystemSound.instance.PlaySound(soundHurt, new Vector2(0.7f, 1.5f));
 
 		}
 
 		void Die()
 		{
 
+			SystemSound.instance.PlaySound(soundDie, new Vector2(0.7f, 1.5f));
+
 			if (isPlayer) systemEnd.ShowEndTittle("你已經死了");  //玩家死亡文字
 			else
 			{
+				
 				//print("你已經死了");
 				Destroy(gameObject);
 				systemSpawn.totalCountEnemysLive--;

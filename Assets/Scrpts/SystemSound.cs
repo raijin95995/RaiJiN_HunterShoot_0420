@@ -13,6 +13,7 @@ namespace RAIJIN
 
         private void Awake()
         {
+            instance = this;
             aud = GetComponent<AudioSource>();
         }
 

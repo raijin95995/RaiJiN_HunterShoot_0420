@@ -29,7 +29,7 @@ namespace RAIJIN
 		private TextMeshProUGUI textFloorCount;
 
 		private int countFloor = 1;
-		private int countFloorMax = 2;
+		private int countFloorMax = 20;
 		private bool isFloorMax;
 
 		private SystemEnd systemEnd;

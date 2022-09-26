@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fad2ec0e459193a44a1cb08c75faf3ec, type: 3}
   m_Name: "\u72D7\u72D7"
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 500
   damage: 50
   coin: {fileID: 781594840785799454, guid: 39321c659fa4fe44b94e874c64ba2930, type: 3}
   v2CoinRange: {x: 0, y: 0}
